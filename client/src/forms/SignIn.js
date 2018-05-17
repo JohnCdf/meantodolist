@@ -8,14 +8,16 @@ class SignIn extends Component {
     let form = event.target;
     let formElements = form.elements;
 
-    let params = {}
+    let headers = {}
     for (let i = 0; i < formElements.length; i++) {
-      let currentField = formElements[i];
-      params[currentField.id] = currentField.value;
+      if (formElements[i].type != 'submit') {
+        let currentField = formElements[i];
+        headers[currentField.id] = currentField.value;
+      }
     }
 
     axios.get('/api/user', {
-      params: params
+      headers: headers
     })
     .then (function(response){
       let formDisplay = document.querySelector("#" + form.id + ' .formDisplay');
@@ -26,7 +28,6 @@ class SignIn extends Component {
       var formDisplay = document.querySelector("#" + form.id + ' .formDisplay');
       var errorResponse = JSON.parse(error.request.response);
       formDisplay.innerHTML = errorResponse.message
-      
     })
   }
   constructor(props){
