@@ -10,7 +10,7 @@ class SignIn extends Component {
 
     let headers = {}
     for (let i = 0; i < formElements.length; i++) {
-      if (formElements[i].type != 'submit') {
+      if (formElements[i].type !== 'submit') {
         let currentField = formElements[i];
         headers[currentField.id] = currentField.value;
       }
@@ -44,7 +44,7 @@ return(
   <p className="formDisplay"></p>
 
     <div className="form-group">
-      <label htmlFor="name" >Username</label>
+      <label htmlFor="username" >Username</label>
       <input type="text" id="username" className="form-control" placeholder="Username"/>
     </div>
     
