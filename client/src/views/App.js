@@ -16,7 +16,8 @@ class App extends Component {
     
     let newdate = months[dateObj.getMonth()] + " " + day + ", " + year;
     this.setState({
-      date: newdate
+      date: newdate,
+      list: []
     });
   }
   constructor(props){
@@ -33,7 +34,9 @@ class App extends Component {
         {this.state.date}
         
         <div className="list">
-
+          <ul>
+            {this.state.list}
+          </ul>
         </div>
       </div>  
     )
