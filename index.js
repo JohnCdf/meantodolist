@@ -44,13 +44,13 @@ app.all('*', function ( request, response ) {
         response.end(payload)
       })
     })
-})
-
-app.set('port',(process.env.PORT || 3001));
+});
 
 if (process.env.NODE_ENV == 'production') {
   app.use( express.static('./client/build') )
 }
 
 controller(app);
+
+app.set('port',(process.env.PORT || 3001));
 app.listen(app.get('port'));
