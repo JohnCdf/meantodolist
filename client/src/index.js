@@ -11,7 +11,7 @@ import App from './views/App';
 import SignUp from './forms/SignUp';
 import SignIn from './forms/SignIn';
 import NewItem from './views/NewItem';
-
+//ADD REDUX CENTRALIZED STATE HERE
 ReactDOM.render((
 <BrowserRouter>
 <div className="container">
