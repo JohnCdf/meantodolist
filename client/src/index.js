@@ -12,6 +12,8 @@ import SignUp from './forms/SignUp';
 import SignIn from './forms/SignIn';
 import NewItem from './views/NewItem';
 //ADD REDUX CENTRALIZED STATE HERE
+//ADD MONGODB
+//DEPLOY ON HEROKU
 ReactDOM.render((
 <BrowserRouter>
 <div className="container">
