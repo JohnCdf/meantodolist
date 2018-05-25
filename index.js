@@ -5,8 +5,13 @@ const helpers = require('./lib/helpers');
 const url = require('url');
 var stringDecoder = require('string_decoder').StringDecoder;
 var decoder = new stringDecoder('utf-8');
+var MongoClient = require('mongodb').MongoClient;
 
 const app = express();
+
+function DB() {
+  this.db = null;            // The MongoDB database connection
+}
 
 let routes = {
   'api/user' : handlers.user
@@ -45,6 +50,7 @@ app.all('*', function ( request, response ) {
       })
     })
 });
+
 
 if (process.env.NODE_ENV == 'production') {
   app.use( express.static('./client/build') )
